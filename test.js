@@ -16,7 +16,7 @@
                             }
                             return returns;
                      }
-                      alert(o.currentStyle);
+                 
                      if (o.currentStyle){
                             
                        for(var prop in o.currentStyle){ returns[prop] = o.currentStyle[prop];};
@@ -44,7 +44,7 @@
                        var self =$(this);
                       var styles = cloneStyle(self[0],self);
                       var copyThis = $(this).clone();
-                      alert(styles);
+                   
                       
                       copyThis.css(styles);
                      $('#zoom_clipboard_314159265').append(copyThis);
