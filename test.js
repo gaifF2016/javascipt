@@ -42,9 +42,9 @@
                        var X = $(this).offset().top; 
                        var Y = $(this).offset().left;
                        var self =$(this);
-                      var styles = cloneStyle(self[0],self);
+                     
                       var copyThis = $(this).clone();
-                   
+                      var styles = cloneStyle(copyThis[0],copyThis);
                       
                       copyThis.css(styles);
                      $('#zoom_clipboard_314159265').append(copyThis);
