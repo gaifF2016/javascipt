@@ -43,7 +43,7 @@
                        var Y = $(this).offset().left;
                        var self =$(this);
                      
-                      var copyThis = $(this).clone();
+                      var copyThis = $(this).clone(true);
                       var styles = cloneStyle(copyThis[0],copyThis);
                       
                       copyThis.css(styles);
