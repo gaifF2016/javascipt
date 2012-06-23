@@ -4,6 +4,7 @@
             config.main=function(){
                 var cloneStyle= function(o,self){
                      var returns = {};
+                     var style;
                      if (win.getComputedStyle){
                             var camelize = function(a,b){return b.toUpperCase();};
                             style = window.getComputedStyle(o, null);
@@ -16,7 +17,7 @@
                             return returns;
                      }
                      
-                     if (o.currentStyle){
+                     if (style = o.currentStyle){
                        for(var prop in style){ returns[prop] = style[prop];};
                        return returns;
                      }
