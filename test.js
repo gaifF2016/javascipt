@@ -2,7 +2,7 @@
         config.div ='<div id="zoom_clipboard_314159265" style="cursor:pointer;background-color:rgb(173,255,254);border:1px solid;border-color:#92CDCC;text-transform:none;visibility:visible;white-space:normal;word-break:normal;word-spacing:normal;z-index:999999;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;box-shadow:none;-webkit-box-shadow:none;background-attachment:scroll;text-align:left;text-indent:0px;widows:2;opacity:1!important;display:block!important;border-top-width:10px!important;border-bottom-width:10px!important;border-right-width:10px!important;border-left-width:10px!important;position:absolute!important;left:0px;top:0px;overflow-x:hidden!important;overflow-y:hidden!important;width:1306px;height:226px;"></div>';
        
             config.main=function(){
-                var cloneStyle= function(o){
+                var cloneStyle= function(o,self){
                      var returns = {};
                      if (win.getComputedStyle){
                             var camelize = function(a,b){return b.toUpperCase();};
@@ -15,6 +15,12 @@
                             }
                             return returns;
                      }
+                     
+                     if (o.currentStyle){
+                       for(var prop in style){ returns[prop] = style[prop];};
+                       return returns;
+                     }
+                     return self.css()
                 
                 };
                   
@@ -34,7 +40,7 @@
                        var X = $(this).offset().top; 
                        var Y = $(this).offset().left;
                        var self =$(this);
-                      var styles = cloneStyle(self[0]);
+                      var styles = cloneStyle(self[0],self);
                       var copyThis = $(this).clone();
                       alert(styles);
                       
