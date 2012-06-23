@@ -42,8 +42,11 @@
                        var X = $(this).offset().top; 
                        var Y = $(this).offset().left;
                        var self =$(this);
-                     
+                       alert(self.children().length);
+                       
                       var copyThis = $(this).clone();
+                      alert(copyThis.children().length);
+                       
                       var styles = cloneStyle(copyThis[0],copyThis);
                       
                       copyThis.css(styles);
