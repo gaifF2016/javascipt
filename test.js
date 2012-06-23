@@ -16,9 +16,10 @@
                             }
                             return returns;
                      }
-                     
-                     if (style = o.currentStyle){
-                       for(var prop in style){ returns[prop] = style[prop];};
+                      alert(o.currentStyle);
+                     if (o.currentStyle){
+                            
+                       for(var prop in o.currentStyle){ returns[prop] = o.currentStyle[prop];};
                        return returns;
                      }
                      return self.css()
