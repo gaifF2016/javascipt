@@ -28,7 +28,7 @@
                   
                 $('body').append(config.div);
                 $('#zoom_clipboard_314159265').hide();
-                $('div').mouseenter(function(e){
+                $('*').mouseenter(function(e){
                        var t_width =$(this).width();
                        var t_heigth =$(this).height();
                     if ($(this).attr('id')=='zoom_clipboard_314159265')return;
