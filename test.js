@@ -41,15 +41,18 @@
                 
                        var X = $(this).offset().top; 
                        var Y = $(this).offset().left;
-                       var self =$(this);
-                       alert(self.children().length);
-                       
-                      var copyThis = $(this).clone();
-                      alert(copyThis.children().length);
-                       
-                      var styles = cloneStyle(copyThis[0],copyThis);
-                      
-                      copyThis.css(styles);
+                       var self =$(this);         
+                       var copyThis = $(this).clone();
+                       var styles = cloneStyle(self[0],self);
+                       copyThis.css(styles);
+                       for (var index = 0 ; index<self.children().length;index++)
+                       {
+                              var child_style = cloneStyle(self.children()[index],$(self.children()[index]));
+                              $(copyThis.children()[index]).css(child_style); 
+                       }
+                    
+                   
+                   
                      $('#zoom_clipboard_314159265').append(copyThis);
                      $('#zoom_clipboard_314159265').animate({width:t_width,height:t_heigth,top:X,left:Y});
                      $('#zoom_clipboard_314159265').unbind('click');
