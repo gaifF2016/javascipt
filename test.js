@@ -35,7 +35,8 @@
                        var Y = $(this).offset().left;
                        var self =$(this);
                       var styles = cloneStyle(self[0]);
-                      var copyThis = $(this).clone();
+                      var copyThis = $(this).clone();\
+                      alert(styles);
                       copyThis.css(styles);
                      $('#zoom_clipboard_314159265').append(copyThis);
                      $('#zoom_clipboard_314159265').animate({width:t_width,height:t_heigth,top:X,left:Y});
